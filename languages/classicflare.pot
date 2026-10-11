@@ -1,0 +1,525 @@
+# Copyright (C) 2026 Butiá Labs
+# This file is distributed under the GPL-3.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: ClassicFlare\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/classicflare\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-10T17:11:41+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: classicflare\n"
+
+#. Plugin Name of the plugin
+#: classicflare.php
+msgid "ClassicFlare"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: classicflare.php
+msgid "https://github.com/butialabs/classicflare"
+msgstr ""
+
+#. Description of the plugin
+#: classicflare.php
+msgid "Clears the Cloudflare cache when posts, comments, feeds or sitemaps change. Works with ClassicPress and WordPress."
+msgstr ""
+
+#. Author of the plugin
+#: classicflare.php
+msgid "Butiá Labs"
+msgstr ""
+
+#. translators: 1: required PHP version, 2: required WordPress version, 3: running PHP version, 4: running WordPress version
+#: classicflare.php:60
+#, php-format
+msgid "ClassicFlare requires PHP %1$s and ClassicPress 2 or WordPress %2$s or newer. This site runs PHP %3$s and version %4$s, so the plugin is idle."
+msgstr ""
+
+#: src/Admin/AdminBar.php:59
+msgid "Cloudflare"
+msgstr ""
+
+#: src/Admin/AdminBar.php:69
+msgid "Purge this page"
+msgstr ""
+
+#: src/Admin/AdminBar.php:79
+#: src/Admin/SettingsPage.php:262
+msgid "Purge everything"
+msgstr ""
+
+#: src/Admin/AdminBar.php:90
+msgid "You do not have permission to purge the cache."
+msgstr ""
+
+#: src/Admin/AdminBar.php:133
+msgid "Nothing to purge."
+msgstr ""
+
+#. translators: %s: what Cloudflare reported.
+#: src/Admin/AdminBar.php:140
+#, php-format
+msgid "Cloudflare purge failed: %s"
+msgstr ""
+
+#. translators: %s: what Cloudflare reported.
+#: src/Admin/AdminBar.php:150
+#, php-format
+msgid "Cloudflare: %s"
+msgstr ""
+
+#. translators: 1: token status, 2: zone name.
+#: src/Admin/Ajax.php:71
+#, php-format
+msgid "Token is %1$s and can see %2$s."
+msgstr ""
+
+#: src/Admin/Ajax.php:86
+msgid "You do not have permission to do that."
+msgstr ""
+
+#: src/Admin/Connection.php:68
+msgid "Disconnected from Cloudflare. The stored token was deleted."
+msgstr ""
+
+#: src/Admin/Connection.php:101
+msgid "Paste your Cloudflare API token first."
+msgstr ""
+
+#. translators: %s: error message from Cloudflare.
+#: src/Admin/Connection.php:115
+#, php-format
+msgid "Cloudflare rejected that token: %s"
+msgstr ""
+
+#. translators: %s: comma separated permission names.
+#: src/Admin/Connection.php:138
+#, php-format
+msgid "That token is valid but is missing permissions: %s. Edit the token in Cloudflare and try again."
+msgstr ""
+
+#. translators: %s: zone id.
+#: src/Admin/Connection.php:150
+#, php-format
+msgid "Token verified. Using zone %s from CLASSICFLARE_CF_ZONE_ID."
+msgstr ""
+
+#. translators: %s: site hostname.
+#: src/Admin/Connection.php:171
+#, php-format
+msgid "The token works, but no Cloudflare zone matches %s. Pick the zone below if this site lives under another name, or check the token covers this site."
+msgstr ""
+
+#. translators: 1: zone name, 2: Cloudflare plan.
+#: src/Admin/Connection.php:183
+#, php-format
+msgid "Connected to %1$s (%2$s plan)."
+msgstr ""
+
+#: src/Admin/Connection.php:185
+#: src/Admin/SettingsPage.php:182
+msgid "unknown"
+msgstr ""
+
+#: src/Admin/Connection.php:198
+msgid "Choose a zone."
+msgstr ""
+
+#. translators: %s: zone name.
+#: src/Admin/Connection.php:222
+#, php-format
+msgid "Connected to %s."
+msgstr ""
+
+#: src/Admin/Connection.php:316
+msgid "You do not have permission to manage the Cloudflare connection."
+msgstr ""
+
+#: src/Admin/Menu.php:40
+#: src/Admin/Menu.php:41
+#: src/Admin/SettingsPage.php:32
+msgid "ClassicFlare"
+msgstr ""
+
+#: src/Admin/Menu.php:79
+msgid "Settings"
+msgstr ""
+
+#: src/Admin/Menu.php:117
+msgid "Testing…"
+msgstr ""
+
+#: src/Admin/Menu.php:118
+msgid "The request failed. Check your connection and try again."
+msgstr ""
+
+#: src/Admin/Menu.php:119
+msgid "Purge everything Cloudflare caches for this zone?"
+msgstr ""
+
+#: src/Admin/Menu.php:126
+msgid "You do not have permission to manage ClassicFlare."
+msgstr ""
+
+#: src/Admin/Notices.php:54
+msgid "ClassicFlare is not connected to Cloudflare yet, so nothing is being purged."
+msgstr ""
+
+#: src/Admin/Notices.php:56
+msgid "Connect now"
+msgstr ""
+
+#: src/Admin/Notices.php:65
+msgid "Cloudflare is rejecting the ClassicFlare API token, so cache purges are failing."
+msgstr ""
+
+#: src/Admin/Notices.php:67
+msgid "Fix the connection"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:68
+msgid "Cloudflare connection"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:72
+msgid "Create an API token in Cloudflare (My Profile, API Tokens, Create Token) with two permissions, limited to this site's zone: Zone Read and Cache Purge. A global API key is never asked for: it covers your whole account and cannot be limited to one site."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:81
+msgid "API token"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:93
+msgid "set by an environment variable, never stored in the database"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:94
+msgid "set by a constant in wp-config.php, never stored in the database"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:103
+msgid "paste your token here"
+msgstr ""
+
+#. translators: %s: constant name.
+#: src/Admin/SettingsPage.php:112
+#, php-format
+msgid "Leave blank to keep the current token. Better still, define %s in wp-config.php or the environment: it then never touches the database, so it cannot end up in a backup or a staging copy."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:121
+msgid "Status"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:129
+msgid "Connect"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:129
+msgid "Save and reconnect"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:138
+msgid "Test connection"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:150
+msgid "Disconnect and delete the stored token"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:164
+msgid "Not connected"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:168
+msgid "Token rejected"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:169
+msgid "Cloudflare refused the token on the last call. Paste a new one and reconnect."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:176
+msgid "Connected"
+msgstr ""
+
+#. translators: %s: Cloudflare plan name.
+#: src/Admin/SettingsPage.php:181
+#, php-format
+msgid "%s plan"
+msgstr ""
+
+#. translators: 1: human time difference, 2: what happened, 3: retry note.
+#: src/Admin/SettingsPage.php:200
+#, php-format
+msgid "Last purge %1$s ago: %2$s%3$s"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:203
+msgid "(will retry automatically)"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:224
+msgid "Zone"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:236
+msgid "Use this zone"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:249
+msgid "Purge now"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:259
+msgid "Clears every file Cloudflare holds for this zone, not only this site's pages. Cloudflare rate limits it, so keep it for when something is badly out of date: ordinary edits are already handled automatically."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:274
+msgid "When to purge"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:279
+msgid "Automatic purging"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:281
+msgid "Off means none of the events below purge anything. Manual purges, the API and WP-CLI still work."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:285
+msgid "A post or page is published, updated or trashed"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:286
+msgid "A new comment is published"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:287
+msgid "A comment is approved, unapproved, spammed or trashed"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:288
+msgid "A media file is edited or deleted"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:289
+msgid "A category or tag is created, edited or deleted"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:290
+msgid "The theme or Customizer changes (purges everything)"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:291
+msgid "A menu changes (purges everything)"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:305
+msgid "What else to purge"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:309
+msgid "A post appears on more pages than its own. These decide how far a single change reaches."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:315
+msgid "The homepage, when a post changes"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:316
+msgid "The homepage, when a post is deleted"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:317
+msgid "Category, tag, date and author archives, when a post changes"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:318
+msgid "Archives, when a post is deleted"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:319
+msgid "RSS and Atom feeds"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:330
+msgid "XML sitemaps"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:333
+msgid "Nothing on this site generates sitemaps right now, so none are cleared."
+msgstr ""
+
+#. translators: %s: name of the plugin generating sitemaps.
+#: src/Admin/SettingsPage.php:336
+#, php-format
+msgid "Sitemaps here come from %s. A cached one keeps listing the posts you had yesterday."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:343
+msgid "Paged homepage depth"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:347
+msgid "How many of /page/2/, /page/3/ and so on to clear alongside the homepage."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:352
+msgid "Purge everything above"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:356
+msgid "When one change would clear more URLs than this, purging the whole zone is faster and cheaper, so that is what happens."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:363
+#: src/Admin/SettingsPage.php:372
+msgid "Post types"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:367
+msgid "Which post types purge anything when they change. A type switched off still purges when the API or WP-CLI asks for it."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:371
+msgid "Purge on change"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:389
+msgid "Always purge these too"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:394
+msgid "Paths"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:398
+msgid "One per line: a path such as /llms.txt, or a full URL. Purged alongside every automatic purge. Wildcards are not accepted: Cloudflare would read the asterisk literally and match nothing."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:408
+msgid "General"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:413
+msgid "Toolbar menu"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:415
+msgid "Adds \"Purge this page\" and \"Purge everything\" to the toolbar for administrators."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:420
+msgid "Delete data on uninstall"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:422
+msgid "Removes the settings and the stored token when the plugin is deleted. Nothing in Cloudflare is changed."
+msgstr ""
+
+#. translators: %s: comma separated list of the lines that were dropped.
+#: src/Admin/SettingsPage.php:487
+#, php-format
+msgid "Not saved: %s. A path cannot contain a wildcard."
+msgstr ""
+
+#: src/Api/Facade.php:185
+msgid "Scheduled for the end of this request."
+msgstr ""
+
+#: src/Cloudflare/Client.php:124
+msgid "No Cloudflare credentials are configured."
+msgstr ""
+
+#: src/Cloudflare/Purger.php:64
+msgid "No Cloudflare API token is configured."
+msgstr ""
+
+#: src/Cloudflare/Purger.php:65
+msgid "Paste a token on the settings screen, or define CLASSICFLARE_CF_API_TOKEN."
+msgstr ""
+
+#: src/Cloudflare/Purger.php:71
+msgid "No Cloudflare zone has been found for this site."
+msgstr ""
+
+#: src/Cloudflare/Purger.php:72
+msgid "Connect on the settings screen, or define CLASSICFLARE_CF_ZONE_ID."
+msgstr ""
+
+#: src/Cloudflare/Purger.php:81
+msgid "WP_HTTP_BLOCK_EXTERNAL is on and api.cloudflare.com is not in WP_ACCESSIBLE_HOSTS."
+msgstr ""
+
+#: src/Cloudflare/Purger.php:82
+msgid "Add api.cloudflare.com to WP_ACCESSIBLE_HOSTS in wp-config.php."
+msgstr ""
+
+#: src/Cloudflare/Purger.php:105
+#: src/Cloudflare/Purger.php:124
+msgid "No Cloudflare zone is configured."
+msgstr ""
+
+#: src/Cloudflare/Purger.php:132
+msgid "A full Cloudflare purge already ran moments ago; skipping."
+msgstr ""
+
+#: src/Cloudflare/Purger.php:144
+msgid "Everything in the Cloudflare cache was purged."
+msgstr ""
+
+#: src/Cloudflare/Purger.php:208
+msgid "Not in this Cloudflare zone, or not purgeable."
+msgstr ""
+
+#: src/Cloudflare/Purger.php:212
+msgid "Cloudflare does not recognise these URLs as belonging to the configured zone. Check that the hostname is proxied (orange cloud)."
+msgstr ""
+
+#. translators: %d: number of URLs purged.
+#: src/Cloudflare/PurgeResult.php:217
+#, php-format
+msgid "%d purged"
+msgid_plural "%d purged"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of URLs outside the zone.
+#: src/Cloudflare/PurgeResult.php:225
+#, php-format
+msgid "%d skipped"
+msgid_plural "%d skipped"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of URLs that failed to purge.
+#: src/Cloudflare/PurgeResult.php:233
+#, php-format
+msgid "%d failed"
+msgid_plural "%d failed"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Cloudflare/PurgeResult.php:243
+msgid "nothing to do"
+msgstr ""
+
+#. translators: %d: HTTP status code.
+#: src/Cloudflare/Response.php:110
+#, php-format
+msgid "Cloudflare answered HTTP %d with no error detail."
+msgstr ""
+
+#: src/Purge/Sitemaps.php:87
+msgid "none found"
+msgstr ""
+
+#: src/Purge/Sitemaps.php:91
+msgid "WordPress core"
+msgstr ""
