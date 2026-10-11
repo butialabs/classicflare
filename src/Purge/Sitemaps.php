@@ -53,6 +53,16 @@ final class Sitemaps {
 		return $this->core_enabled() ? 'core' : self::NONE;
 	}
 
+	/**
+	 * @return string[] Names of every sitemap generator this class knows how to read.
+	 */
+	public static function supported_labels(): array {
+		return array_merge(
+			[ __( 'WordPress core', 'classicflare' ) ],
+			array_column( self::PROVIDERS, 'label' )
+		);
+	}
+
 	public function provider_label(): string {
 		$provider = $this->provider();
 

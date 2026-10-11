@@ -43,7 +43,7 @@ final class AdminBar {
 		$bar->add_node(
 			[
 				'id'    => 'classicflare',
-				'title' => __( 'Cloudflare', 'classicflare' ),
+				'title' => __( 'Cache', 'classicflare' ),
 				'href'  => Menu::url(),
 			]
 		);

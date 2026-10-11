@@ -104,8 +104,18 @@ final class SettingsPage {
 		$zone_id  = Credentials::zone_id();
 
 		printf(
-			'<p>%s</p>',
-			esc_html__( 'Create an API token in Cloudflare (My Profile, API Tokens, Create Token) with two permissions, limited to this site\'s zone: Zone Read and Cache Purge. A global API key is never asked for: it covers your whole account and cannot be limited to one site.', 'classicflare' )
+			'<p>%s</p><ol><li>%s</li><li>%s</li><li>%s</li><li>%s</li><li>%s</li></ol><p>%s</p>',
+			esc_html__( 'To connect, create an API token in Cloudflare:', 'classicflare' ),
+			sprintf(
+				/* translators: %s: link to the Cloudflare API Tokens page. */
+				esc_html__( 'Open %s and click Create Token.', 'classicflare' ),
+				'<a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank" rel="noopener noreferrer">' . esc_html__( 'API Tokens in your Cloudflare profile', 'classicflare' ) . '</a>'
+			),
+			esc_html__( 'Choose Create Custom Token.', 'classicflare' ),
+			esc_html__( 'Under Permissions, add two rows: Zone, Zone, Read and Zone, Cache Purge, Purge.', 'classicflare' ),
+			esc_html__( 'Under Zone Resources, choose Include, Specific zone, and this site\'s domain.', 'classicflare' ),
+			esc_html__( 'Click Continue to summary, then Create Token, and paste the token below. Cloudflare shows it only once.', 'classicflare' ),
+			esc_html__( 'A global API key is never asked for: it covers your whole account and cannot be limited to one site.', 'classicflare' )
 		);
 
 		$this->open_post_form( Connection::ACTION_CONNECT );
@@ -136,12 +146,10 @@ final class SettingsPage {
 
 			printf(
 				'<p class="description">%s</p>',
-				esc_html(
-					sprintf(
-						/* translators: %s: constant name. */
-						__( 'Leave blank to keep the current token. Better still, define %s in wp-config.php or the environment: it then never touches the database, so it cannot end up in a backup or a staging copy.', 'classicflare' ),
-						Options::constant_name( 'cf_api_token' )
-					)
+				sprintf(
+					/* translators: %s: constant name. */
+					esc_html__( 'Leave blank to keep the current token. Better still, define %s in wp-config.php or the environment.', 'classicflare' ),
+					'<b>' . esc_html( Options::constant_name( 'cf_api_token' ) ) . '</b>'
 				)
 			);
 		}
@@ -363,13 +371,18 @@ final class SettingsPage {
 			'purge[sitemaps]',
 			__( 'XML sitemaps', 'classicflare' ),
 			(bool) ( $settings['purge']['sitemaps'] ?? true ),
-			Sitemaps::NONE === $sitemaps->provider()
+			( Sitemaps::NONE === $sitemaps->provider()
 				? __( 'Nothing on this site generates sitemaps right now, so none are cleared.', 'classicflare' )
 				: sprintf(
 					/* translators: %s: name of the plugin generating sitemaps. */
 					__( 'Sitemaps here come from %s. A cached one keeps listing the posts you had yesterday.', 'classicflare' ),
 					$sitemaps->provider_label()
-				)
+				) )
+			. ' ' . sprintf(
+				/* translators: %s: comma-separated list of supported sitemap generators. */
+				__( 'Supported: %s.', 'classicflare' ),
+				implode( ', ', Sitemaps::supported_labels() )
+			)
 		);
 
 		$this->number(
