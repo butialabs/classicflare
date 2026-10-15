@@ -9,6 +9,7 @@ declare( strict_types = 1 );
 
 namespace ClassicFlare\Admin;
 
+use ClassicFlare\Cloudflare\Credentials;
 use ClassicFlare\Support\Options;
 
 defined( 'ABSPATH' ) || exit;
@@ -55,12 +56,20 @@ final class Menu {
 	public function action_links( $links ): array {
 		$links = is_array( $links ) ? $links : [];
 
+		if ( '' === Credentials::zone_id() ) {
+			$label = __( 'Connect to Cloudflare', 'classicflare' );
+		} elseif ( 'invalid' === Options::cf_state( 'token_status', '' ) ) {
+			$label = __( 'Fix connection', 'classicflare' );
+		} else {
+			$label = __( 'Settings', 'classicflare' );
+		}
+
 		array_unshift(
 			$links,
 			sprintf(
 				'<a href="%s">%s</a>',
 				esc_url( self::url() ),
-				esc_html__( 'Settings', 'classicflare' )
+				esc_html( $label )
 			)
 		);
 

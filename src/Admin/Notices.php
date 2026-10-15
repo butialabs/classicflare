@@ -9,9 +9,6 @@ declare( strict_types = 1 );
 
 namespace ClassicFlare\Admin;
 
-use ClassicFlare\Cloudflare\Credentials;
-use ClassicFlare\Support\Options;
-
 defined( 'ABSPATH' ) || exit;
 
 final class Notices {
@@ -29,37 +26,6 @@ final class Notices {
 		}
 
 		$this->render_flash();
-
-		$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
-		$id     = $screen ? (string) $screen->id : '';
-
-		if ( str_ends_with( $id, '_page_' . Menu::SLUG ) ) {
-			return;
-		}
-
-		if ( ! in_array( $id, [ 'dashboard', 'plugins', 'dashboard-network', 'plugins-network' ], true ) ) {
-			return;
-		}
-
-		if ( '' === Credentials::zone_id() ) {
-			printf(
-				'<div class="notice notice-warning"><p>%s <a href="%s">%s</a></p></div>',
-				esc_html__( 'ClassicFlare is not connected to Cloudflare yet, so nothing is being purged.', 'classicflare' ),
-				esc_url( Menu::url() ),
-				esc_html__( 'Connect now', 'classicflare' )
-			);
-
-			return;
-		}
-
-		if ( 'invalid' === Options::cf_state( 'token_status', '' ) ) {
-			printf(
-				'<div class="notice notice-error"><p>%s <a href="%s">%s</a></p></div>',
-				esc_html__( 'Cloudflare is rejecting the ClassicFlare API token, so cache purges are failing.', 'classicflare' ),
-				esc_url( Menu::url() ),
-				esc_html__( 'Fix the connection', 'classicflare' )
-			);
-		}
 	}
 
 	/**

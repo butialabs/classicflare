@@ -35,7 +35,7 @@ if ( version_compare( PHP_VERSION, MIN_PHP, '<' ) || version_compare( get_blogin
 	add_action(
 		'admin_notices',
 		static function (): void {
-			if ( ! current_user_can( 'activate_plugins' ) ) {
+			if ( 'plugins.php' !== ( $GLOBALS['pagenow'] ?? '' ) || ! current_user_can( 'activate_plugins' ) ) {
 				return;
 			}
 			printf(
