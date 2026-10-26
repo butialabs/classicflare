@@ -39,12 +39,12 @@ jobs:
           mkdir -p build/classicflare
           rsync -a --exclude-from=.distignore --exclude=build ./ build/classicflare/
           cd build
-          zip -qr "classicflare-${TAG}.zip" classicflare
-          unzip -l "classicflare-${TAG}.zip" | tail -n 1
+          zip -qr classicflare.zip classicflare
+          unzip -l classicflare.zip | tail -n 1
 
       - name: Attach to the GitHub release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release view "${TAG}" >/dev/null 2>&1 || gh release create "${TAG}" --title "${TAG}" --notes "ClassicFlare ${TAG#v}"
-          gh release upload "${TAG}" "build/classicflare-${TAG}.zip" --clobber
+          gh release upload "${TAG}" build/classicflare.zip --clobber
