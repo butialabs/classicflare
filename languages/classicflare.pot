@@ -37,10 +37,10 @@ msgstr ""
 msgid "Butiá Labs"
 msgstr ""
 
-#. translators: 1: required PHP version, 2: required WordPress version, 3: running PHP version, 4: running WordPress version
-#: classicflare.php:46
+#. translators: 1: required PHP version, 2: required ClassicPress version, 3: required WordPress version, 4: running PHP version, 5: platform name (ClassicPress or WordPress), 6: running platform version
+#: classicflare.php:59
 #, php-format
-msgid "ClassicFlare requires PHP %1$s and ClassicPress 2 or WordPress %2$s or newer. This site runs PHP %3$s and version %4$s, so the plugin is idle."
+msgid "ClassicFlare requires PHP %1$s and ClassicPress %2$s or WordPress %3$s or newer. This site runs PHP %4$s and %5$s %6$s, so the plugin is idle."
 msgstr ""
 
 #: src/Admin/AdminBar.php:46
