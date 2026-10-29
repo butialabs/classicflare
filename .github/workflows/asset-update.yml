@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - '.wordpress-org/**'
+      - 'readme.txt'
 
 jobs:
   asset-update:
@@ -20,3 +21,4 @@ jobs:
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SLUG: classicflare
+          IGNORE_OTHER_FILES: true
