@@ -16,6 +16,6 @@ jobs:
       - name: WordPress Plugin Build Zip
         uses: 10up/action-wordpress-plugin-build-zip@stable
         with:
-          archive-name: pushwi
+          archive-name: classicflare
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
