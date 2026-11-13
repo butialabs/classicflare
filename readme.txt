@@ -147,6 +147,25 @@ The `classicflare_purge_urls` filter adjusts the final list before it is sent, a
 
 == Changelog ==
 
+= 1.1.0 =
+Added:
+
+* Purge the active theme's `style.css` and `style.min.css` from Cloudflare when the theme's `Version` header changes. For a child theme, the parent theme is checked too.
+* Each stylesheet is purged without a query string and with `?ver=` set to the new version, the previous version and ClassicPress's default asset version (`classicpress_asset_version()`). That last one is what CP appends to styles enqueued without their own version, and it does not change when the theme changes. `style.min.css` is only included if the file exists.
+* Checks run on `admin_init` (covers themes uploaded by FTP, SFTP or git), on `upgrader_process_complete` (theme updated from the dashboard) and on `after_switch_theme` (stores the new baseline only, since switching themes already purges the whole zone).
+* New "The active theme or its parent changes version" switch under Triggers (`purge.on_theme_update`, on by default).
+* New filter `classicflare_theme_asset_urls( $urls, $changed, $current )` to add other theme files.
+
+Changed:
+
+* `uninstall.php` also removes the new `classicflare_theme_versions` option when "Delete data on uninstall" is on.
+* Version bumped to 1.1.0 in `classicflare.php`, `readme.txt` and `languages/classicflare.pot`.
+
+Notes:
+
+* On the first run after the update, the plugin only records the current versions. It does not purge anything.
+* A 30-second lock (`classicflare_lock_theme_versions`) keeps two admin requests from purging the same change twice.
+
 = 1.0.0 =
 * Initial release.
 
