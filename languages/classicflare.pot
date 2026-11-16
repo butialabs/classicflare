@@ -2,7 +2,7 @@
 # This file is distributed under the GPL-3.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: ClassicFlare 1.0.0\n"
+"Project-Id-Version: ClassicFlare 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/classicflare\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -346,6 +346,10 @@ msgid "The theme or Customizer changes (purges everything)"
 msgstr ""
 
 #: src/Admin/SettingsPage.php:335
+msgid "The active theme or its parent changes version (purges style.css and style.min.css)"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:336
 msgid "A menu changes (purges everything)"
 msgstr ""
 

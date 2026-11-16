@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
  */
 final class SettingsPage {
 
-	private const TRIGGERS = [ 'post_on_edit', 'on_new_comment', 'on_comment_status', 'on_attachment_edit', 'on_term_change', 'on_theme_switch', 'on_menu_change' ];
+	private const TRIGGERS = [ 'post_on_edit', 'on_new_comment', 'on_comment_status', 'on_attachment_edit', 'on_term_change', 'on_theme_switch', 'on_theme_update', 'on_menu_change' ];
 
 	private const SCOPE = [ 'homepage_on_edit', 'homepage_on_delete', 'archives_on_edit', 'archives_on_delete', 'feeds', 'sitemaps' ];
 
@@ -332,6 +332,7 @@ final class SettingsPage {
 			'on_attachment_edit' => __( 'A media file is edited or deleted', 'classicflare' ),
 			'on_term_change'     => __( 'A category or tag is created, edited or deleted', 'classicflare' ),
 			'on_theme_switch'    => __( 'The theme or Customizer changes (purges everything)', 'classicflare' ),
+			'on_theme_update'    => __( 'The active theme or its parent changes version (purges style.css and style.min.css)', 'classicflare' ),
 			'on_menu_change'     => __( 'A menu changes (purges everything)', 'classicflare' ),
 		];
 

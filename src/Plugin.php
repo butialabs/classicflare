@@ -15,6 +15,7 @@ use ClassicFlare\Purge\Coordinator;
 use ClassicFlare\Purge\Hooks;
 use ClassicFlare\Purge\Scheduler;
 use ClassicFlare\Purge\Sitemaps;
+use ClassicFlare\Purge\ThemeAssets;
 use ClassicFlare\Purge\UrlCollector;
 use ClassicFlare\Support\Options;
 
@@ -101,6 +102,7 @@ final class Plugin {
 		add_action( 'init', [ Scheduler::class, 'schedule' ] );
 
 		( new Hooks( $this->container ) )->register();
+		( new ThemeAssets( $this->container->get( 'coordinator' ) ) )->register();
 	}
 
 	public static function is_enabled(): bool {

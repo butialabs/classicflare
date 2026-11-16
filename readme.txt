@@ -4,7 +4,7 @@ Tags: cloudflare, cache, purge, cdn, classicpress
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -25,6 +25,8 @@ changed are purged from Cloudflare, along with every page that shows them.
 * **Sitemaps**: read from the index your site publishes, so the right files are cleared, from
   core, Yoast SEO, Rank Math, All in One SEO or SEOPress
 * **Media, categories, tags, menus and theme changes**, each with its own switch
+* **Theme updates**: when the active theme, or the parent of a child theme, changes version,
+  its style.css and style.min.css are purged, with and without ?ver=
 * A list of extra paths, such as /llms.txt, purged alongside every automatic purge
 * "Purge this page" and "Purge everything" in the toolbar, and a button on the settings screen
 * A retry when Cloudflare is rate limiting or unreachable, honouring Retry-After, for only the
@@ -146,6 +148,12 @@ The `classicflare_purge_urls` filter adjusts the final list before it is sent, a
 `classicflare_sitemap_urls` teaches it about a sitemap generator it does not know.
 
 == Changelog ==
+
+= 1.1.0 =
+* New: purge the active theme's style.css and style.min.css (parent and child, with and without
+  ?ver=) when the theme's version changes, whether it was updated from the dashboard or uploaded
+  by hand. Has its own switch under Triggers. The `classicflare_theme_asset_urls` filter adds
+  more files.
 
 = 1.0.0 =
 * Initial release.

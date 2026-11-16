@@ -46,6 +46,7 @@ final class Options {
 				'on_attachment_edit' => true,
 				'on_term_change'     => true,
 				'on_theme_switch'    => true,
+				'on_theme_update'    => true,
 				'on_menu_change'     => true,
 				'feeds'              => true,
 				'sitemaps'           => true,
