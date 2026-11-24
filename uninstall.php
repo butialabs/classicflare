@@ -30,6 +30,7 @@ function classicflare_uninstall_site(): void {
 		'classicflare_custom_urls',
 		'classicflare_sitemap_index',
 		'classicflare_last_purge',
+		'classicflare_theme_versions',
 	];
 
 	foreach ( $options as $option ) {

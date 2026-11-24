@@ -3,7 +3,7 @@
  * Plugin Name:       ClassicFlare
  * Plugin URI:        https://github.com/butialabs/classicflare
  * Description:       Clears the Cloudflare cache when posts, comments, feeds or sitemaps change.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 6.2
  * Requires PHP:      8.1
  * Requires CP:       2.0
@@ -22,7 +22,7 @@ namespace ClassicFlare;
 
 defined( 'ABSPATH' ) || exit;
 
-const VERSION = '1.0.0';
+const VERSION = '1.1.0';
 const MIN_PHP = '8.1';
 const MIN_WP  = '6.2';
 const MIN_CP  = '2.0';
